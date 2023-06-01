@@ -5,16 +5,19 @@
     snoitulos
 */
 
-$frase = "Bienvenido a Treda Solutions";
-$cadenaSeparado = explode(" ", $frase);
-
-$cadenaInvertida = "";
-foreach ($cadenaSeparado as $key => $value) {
-    if(strlen($value) > 5){
-        $cadenaInvertida .= strrev($value) . " ";
-    }else {
-        $cadenaInvertida .= $value . " ";
+function invertirPalabras($frase){
+    $cadenaSeparado = explode(" ", $frase);
+    $cadenaInvertida = "";
+    foreach ($cadenaSeparado as $key => $value) {
+        if(strlen($value) > 5){
+            $cadenaInvertida .= strrev($value) . " ";
+        }else {
+            $cadenaInvertida .= $value . " ";
+        }
     }
+
+    return $cadenaInvertida;
 }
 
-echo $cadenaInvertida;
+$frase = "Bienvenido a Treda Solutions";
+echo invertirPalabras($frase);

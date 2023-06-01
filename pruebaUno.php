@@ -5,7 +5,7 @@
     ingresado es 10, los múltiplos de 3 y 5 menores a 10 son: 3, 5, 6, 9, el resultado de la
     función debe ser 23, debido a que es la suma de 3, 5, 6, 9
 */
-function metodoX($n)
+function sumarMultiplos($n)
 {
 
     $sumaMultiplos = 0;
@@ -19,4 +19,4 @@ function metodoX($n)
     return $sumaMultiplos;
 }
 
-echo metodoX(10);
+echo sumarMultiplos(10);
