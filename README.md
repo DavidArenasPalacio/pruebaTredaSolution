@@ -12,7 +12,7 @@ Instalar las versiones actualizadas en tu equipo en el caso de no estarlo
 1. Clona el repositorio, preferiblemente en xampp (htdocs) en el servidor de PHP:
 
 ```sh
-git clone https://github.com/DavidArenasPalacio/pruebaSolutionTreda/
+git clone https://github.com/DavidArenasPalacio/pruebaTredaSolution/
 ```
 2. Para acceder a los  ejercicio de PHP y SQL entra a las siguientes carpetas: 
 .pruebaṔHP
