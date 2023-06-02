@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\TiendaController;
 use App\Models\Tienda;
 use Illuminate\Support\Facades\Route;
@@ -16,3 +17,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::resource('/tienda', TiendaController::class);
+
+Route::resource('/producto', ProductoController::class);

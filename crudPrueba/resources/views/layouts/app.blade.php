@@ -28,10 +28,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{ route('tienda.index') }}">Tiendas</a>
+                        <a class="nav-link @if(request()->routeIs('tienda.index')) active @endif" aria-current="page" href="{{ route('tienda.index') }}">Tiendas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Productos</a>
+                        <a class="nav-link  @if(request()->routeIs('producto.index')) active @endif" href="{{route('producto.index')}}"   >Productos</a>
                     </li>
                 </ul>
             </div>

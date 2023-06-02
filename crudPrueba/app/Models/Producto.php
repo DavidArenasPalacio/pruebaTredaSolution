@@ -14,7 +14,7 @@ class Producto extends Model
         'sku',
         'descripcion',
         'valor',
-        'tienda',
+        'tienda_id',
         'imagen'
     ];
 
