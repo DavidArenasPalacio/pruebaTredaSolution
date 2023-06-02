@@ -16,6 +16,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get(
+    '/',
+    function () {
+        return view('home');
+    }
+);
+
 Route::resource('/tienda', TiendaController::class);
 
 Route::resource('/producto', ProductoController::class);
