@@ -3,63 +3,70 @@
 namespace App\Http\Controllers;
 
 use App\Models\Tienda;
+use Carbon\Carbon;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
 class TiendaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+
+    public function index(): View
     {
-        //
+        $tiendas  = Tienda::all();
+        return view('tienda.index', ['tiendas' => $tiendas]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function create(): View
     {
         //
+        return view('tienda.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+
+    public function store(Request $request): RedirectResponse
+    {
+        //Validación    
+        $request->validate([
+            'nombre' => 'required|max:100',
+            'fechaApertura' => 'required',
+        ]);
+        
+ 
+        Tienda::create($request->all()); 
+
+        return redirect()->route('tienda.index')->with('success', 'Tienda creada exitosamente!');
+    }
+
+   
+    public function edit(Tienda $tienda) : View
     {
         //
+        return view('tienda.edit', ['tienda' => $tienda]);
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Tienda $tienda)
+   
+    public function update(Request $request, Tienda $tienda): RedirectResponse
     {
         //
+        //Validación    
+        $request->validate([
+            'nombre' => 'required|max:100',
+            'fechaApertura' => 'required',
+        ]);
+        
+ 
+        $tienda->update($request->all()); 
+
+        return redirect()->route('tienda.index')->with('success', 'Tienda actuazalida exitosamente!');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Tienda $tienda)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Tienda $tienda)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
+   
     public function destroy(Tienda $tienda)
     {
         //
+        $tienda->delete();
+
+        return redirect()->route('tienda.index')->with('success', 'Tienda eliminada exitosamente!');
     }
 }
