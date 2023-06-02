@@ -36,3 +36,9 @@ php artisan migrate
 ```sh
 php artisan serve
 ```
+
+4.Para ver las imagenes ejecuta el siguiente comando en la terminal: 
+
+```sh
+php artisan storage:link
+```
